@@ -33,6 +33,13 @@ public class GameMainLoop : MonogameGraphics
     private KeyboardState _previousKeyboardState;
     protected override void Update(GameTime gameTime)
     {
+        HandlerCloseWindow();
+        
+        base.Update(gameTime);
+    }
+
+    private void HandlerCloseWindow()
+    {
         KeyboardState currentState = Keyboard.GetState();
 
         if (currentState.IsKeyDown(Keys.Escape) &&
@@ -42,8 +49,6 @@ public class GameMainLoop : MonogameGraphics
             CloseWindow();
         }
         _previousKeyboardState = currentState;
-
-        base.Update(gameTime);
     }
 
     protected override void UnloadContent()

@@ -70,3 +70,4 @@
 /home/loganbtgt/Documents/csharp_projects/Monogame3D/obj/Debug/net9.0/Monogame_3d.pdb
 /home/loganbtgt/Documents/csharp_projects/Monogame3D/obj/Debug/net9.0/Monogame_3d.genruntimeconfig.cache
 /home/loganbtgt/Documents/csharp_projects/Monogame3D/obj/Debug/net9.0/ref/Monogame_3d.dll
+/home/loganbtgt/Documents/csharp_projects/Monogame3D/obj/Debug/net9.0/Monogame_3d.sourcelink.json
