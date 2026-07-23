@@ -34,7 +34,6 @@ public abstract class GameApplication : Game
         base.Draw(gameTime);
     }
 
-
     /// <summary>
     /// Warning: No linux para que esse method seja chamado é preciso ter certeza que 
     /// Fullscreen = false, pois a resolução não retorna ao normal ao fechar a janela
