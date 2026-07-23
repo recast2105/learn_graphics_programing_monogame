@@ -1,0 +1,146 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/loganbtgt/Documents/csharp_projects/Monogame3D/MonoGame.Game/MonoGame.Game.csproj": {}
+  },
+  "projects": {
+    "/home/loganbtgt/Documents/csharp_projects/Monogame3D/MonoGame.Game/MonoGame.Game.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/loganbtgt/Documents/csharp_projects/Monogame3D/MonoGame.Game/MonoGame.Game.csproj",
+        "projectName": "MonoGame.Game",
+        "projectPath": "/home/loganbtgt/Documents/csharp_projects/Monogame3D/MonoGame.Game/MonoGame.Game.csproj",
+        "packagesPath": "/home/loganbtgt/.nuget/packages/",
+        "outputPath": "/home/loganbtgt/Documents/csharp_projects/Monogame3D/MonoGame.Game/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/loganbtgt/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/loganbtgt/Documents/csharp_projects/Monogame3D/Monogame_3d.csproj": {
+                "projectPath": "/home/loganbtgt/Documents/csharp_projects/Monogame3D/Monogame_3d.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MonoGame.Content.Builder.Task": {
+              "target": "Package",
+              "version": "[3.8.*, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.8.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/loganbtgt/Documents/csharp_projects/Monogame3D/Monogame_3d.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/loganbtgt/Documents/csharp_projects/Monogame3D/Monogame_3d.csproj",
+        "projectName": "Monogame_3d",
+        "projectPath": "/home/loganbtgt/Documents/csharp_projects/Monogame3D/Monogame_3d.csproj",
+        "packagesPath": "/home/loganbtgt/.nuget/packages/",
+        "outputPath": "/home/loganbtgt/Documents/csharp_projects/Monogame3D/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/loganbtgt/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.8.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
