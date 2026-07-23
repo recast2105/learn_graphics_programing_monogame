@@ -1,7 +1,5 @@
 #nullable enable
-using System.Threading;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using MonoGame3D.Include;
 
 namespace MonoGame3D.Source;
@@ -14,7 +12,6 @@ public class GameMainLoop : MonogameGraphics
 
     protected override void Initialize()
     {
-        SetFullScreen(true);
         base.Initialize();
     }
 
@@ -25,30 +22,19 @@ public class GameMainLoop : MonogameGraphics
 
     protected override void Draw(GameTime gameTime)
     {
-        SetScreenColor(Color.MonoGameOrange);
+
+        SetScreenColor(Color.Black);
+
+        DrawTriangle();
 
         base.Draw(gameTime);
     }
 
-    private KeyboardState _previousKeyboardState;
     protected override void Update(GameTime gameTime)
     {
-        HandlerCloseWindow();
-        
+        CloseWindowHandler();
+
         base.Update(gameTime);
-    }
-
-    private void HandlerCloseWindow()
-    {
-        KeyboardState currentState = Keyboard.GetState();
-
-        if (currentState.IsKeyDown(Keys.Escape) &&
-        !_previousKeyboardState.IsKeyDown(Keys.Escape))
-        {
-            SetFullScreen(false);
-            CloseWindow();
-        }
-        _previousKeyboardState = currentState;
     }
 
     protected override void UnloadContent()

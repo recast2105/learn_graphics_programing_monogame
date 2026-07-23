@@ -6,14 +6,14 @@ using Microsoft.Xna.Framework.Input;
 namespace MonoGame3D.Include;
 
 // Super classe responsavel em lidar com a abstração da parte grafica.
-public abstract class MonogameGraphics : Game
+public abstract partial class MonogameGraphics : Game
 {
-    public GraphicsDeviceManager Graphics { get; private set; }
+    private GraphicsDeviceManager _graphics;
 
     // Construtor precisa ser chamador para executar os graficos
     protected MonogameGraphics(int screenWidth, int screenHeight, string? screenTitle)
     {
-        Graphics = new GraphicsDeviceManager(this)
+        _graphics = new GraphicsDeviceManager(this)
         {
             PreferredBackBufferWidth = screenWidth,
             PreferredBackBufferHeight = screenHeight
@@ -33,12 +33,72 @@ public abstract class MonogameGraphics : Game
 
     public void SetFullScreen(bool fullScreen)
     {
-        Graphics.IsFullScreen = fullScreen;
-        Graphics.ApplyChanges();
+        _graphics.IsFullScreen = fullScreen;
+        _graphics.ApplyChanges();
     }
 
     public void SetScreenColor(Color screenColor)
     {
         GraphicsDevice.Clear(screenColor);
     }
+
+    private KeyboardState _previousKeyboardState;
+
+    /// <summary>
+    /// Quando for usar o SetFullScreen() e desejar fechar o Window, esse method 
+    /// deve ser usado.
+    /// </summary>
+    public void CloseWindowHandler()
+    {
+        KeyboardState currentState = Keyboard.GetState();
+
+        if (currentState.IsKeyDown(Keys.Escape) &&
+        !_previousKeyboardState.IsKeyDown(Keys.Escape))
+        {
+            SetFullScreen(false);
+            CloseWindow();
+        }
+        _previousKeyboardState = currentState;
+    }
 }
+
+partial class MonogameGraphics
+{
+    public void DrawTriangle()
+    {
+        VertexPositionColor[] vertices =
+        {
+            new( new Vector3(0, 0.5f, 0), Color.Red),
+
+            new( new Vector3(0.5f, -0.5f, 0), Color.Green),
+
+            new( new Vector3(-0.5f, -0.5f, 0), Color.Blue)
+        };
+
+        VertexBuffer vertexBuffer = new(
+            GraphicsDevice,
+            typeof(VertexPositionColor),
+            vertices.Length,
+            BufferUsage.None
+        );
+
+
+        BasicEffect effect = new(GraphicsDevice)
+        {
+            VertexColorEnabled = true
+        };
+
+        GraphicsDevice.SetVertexBuffer(vertexBuffer);
+
+        foreach (var pass in effect.CurrentTechnique.Passes)
+        {
+            pass.Apply();
+
+            GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, 1);
+        }
+
+        vertexBuffer.SetData(vertices);
+    }
+}
+
+
