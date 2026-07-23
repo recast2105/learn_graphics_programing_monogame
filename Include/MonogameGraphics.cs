@@ -82,10 +82,11 @@ partial class MonogameGraphics
             BufferUsage.None
         );
 
+        vertexBuffer.SetData(vertices);
 
         BasicEffect effect = new(GraphicsDevice)
         {
-            VertexColorEnabled = true
+            VertexColorEnabled = true,
         };
 
         GraphicsDevice.SetVertexBuffer(vertexBuffer);
@@ -93,11 +94,10 @@ partial class MonogameGraphics
         foreach (var pass in effect.CurrentTechnique.Passes)
         {
             pass.Apply();
+            effect.
 
             GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, 1);
         }
-
-        vertexBuffer.SetData(vertices);
     }
 }
 
