@@ -45,8 +45,7 @@ public abstract partial class MonogameGraphics : Game
     private KeyboardState _previousKeyboardState;
 
     /// <summary>
-    /// Quando for usar o SetFullScreen() e desejar fechar o Window, esse method 
-    /// deve ser usado.
+    /// Automaticamente desativa o modo fullscreen
     /// </summary>
     public void CloseWindowHandler()
     {
@@ -62,18 +61,22 @@ public abstract partial class MonogameGraphics : Game
     }
 }
 
+
 partial class MonogameGraphics
 {
+    // Separando para classe para ficar mais organizado entre processos graficos basicos e  complexo
+    // =========================Draw Shapes=============================== //  
+
     public void DrawTriangle()
     {
         VertexPositionColor[] vertices =
-        {
+        [
             new( new Vector3(0, 0.5f, 0), Color.Red),
 
             new( new Vector3(0.5f, -0.5f, 0), Color.Green),
 
             new( new Vector3(-0.5f, -0.5f, 0), Color.Blue)
-        };
+        ];
 
         VertexBuffer vertexBuffer = new(
             GraphicsDevice,

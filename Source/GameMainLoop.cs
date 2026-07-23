@@ -33,7 +33,6 @@ public class GameMainLoop : MonogameGraphics
     protected override void Update(GameTime gameTime)
     {
         CloseWindowHandler();
-
         base.Update(gameTime);
     }
 
