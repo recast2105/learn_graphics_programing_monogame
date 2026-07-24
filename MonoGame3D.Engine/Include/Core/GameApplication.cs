@@ -8,7 +8,6 @@ public abstract class GameApplication : Game
 {
     protected readonly Renderer Renderer;
     protected readonly WindowManager WindowManager;
-
     private readonly GraphicsDeviceManager _graphics;
 
     protected GameApplication(int width, int height, string title)
@@ -39,7 +38,7 @@ public abstract class GameApplication : Game
     /// Fullscreen = false, pois a resolução não retorna ao normal ao fechar a janela
     /// se esse modo estiver ativo.
     /// </summary>
-    protected void CloseWindow()
+    protected void CloseApplication()
     {
         Exit();
     }

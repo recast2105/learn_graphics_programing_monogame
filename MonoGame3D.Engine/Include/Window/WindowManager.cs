@@ -1,6 +1,5 @@
+using Include.Graphics;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-
 namespace Include.Window;
 
 public class WindowManager(GraphicsDeviceManager graphics)
@@ -12,4 +11,12 @@ public class WindowManager(GraphicsDeviceManager graphics)
         _graphics.IsFullScreen = enabled;
         _graphics.ApplyChanges();
     }
+
+    public void CloseWindow()
+    {
+        Renderer renderer = new();
+
+    }
+
+
 }

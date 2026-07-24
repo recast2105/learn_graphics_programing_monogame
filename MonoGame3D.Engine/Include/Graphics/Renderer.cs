@@ -42,10 +42,7 @@ public class Renderer
         {
             pass.Apply();
 
-            device.DrawPrimitives(
-                PrimitiveType.TriangleList,
-                0,
-                1);
+            device.DrawPrimitives(PrimitiveType.TriangleList, 0, 1);
         }
     }
 }

@@ -19,7 +19,6 @@ public class MainGameLoop : GameApplication
         base.LoadContent();
     }
 
-
     protected override void Update(GameTime gameTime)
     {
         CloseWindowHandler();
@@ -52,7 +51,7 @@ public class MainGameLoop : GameApplication
         !_previousKeyboardState.IsKeyDown(Keys.Escape))
         {
             WindowManager.SetFullscreen(false);
-            CloseWindow();
+            CloseApplication();
         }
         _previousKeyboardState = currentState;
     }
